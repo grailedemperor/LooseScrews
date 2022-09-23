@@ -11,17 +11,37 @@ Dashboard.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image: {
-      type: DataTypes.DATE,
+    category: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    ending_date: {
-      type: DataTypes.DATE,
+    manufacturer: {
+      type: DataTypes.STRING,
       allowNull: false,
+    },
+    retail_price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    in_stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    orders: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },   
+    customers: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
