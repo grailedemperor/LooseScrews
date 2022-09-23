@@ -1,38 +1,41 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class OrderInfo extends Model {}
 
-Project.init(
-  {
-    id: {
+OrderInfo.init(
+  { order_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      references: {
+        model: 'orders',
+        key: 'id',
+      },
     },
-    name: {
+    order_status: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    client_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    delivery_location: {
       type: DataTypes.STRING,
     },
-    date_created: {
+    ordered_on: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    shipped_by: {
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+    delivered_by: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
@@ -40,8 +43,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'orderInfo',
   }
 );
 
-module.exports = Project;
+module.exports = OrderInfo;
