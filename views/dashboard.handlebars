@@ -1,0 +1,39 @@
+
+  <!--{{dashboard.name}}-->
+  <table id="results">
+  <thead>
+                <th>
+                    Manage Item
+                </th>
+                <th>
+                    Item ID
+                </th>
+                <th>
+                    Item image
+                </th>
+                <th>
+                    Item Name
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Manufacturer
+                </th>
+                <th>
+                    Retail Price
+                </th>
+                <th>
+                    Quantity left
+                </th>
+                <th>
+                    Orders
+                </th>
+                <th>
+                    Customers
+                </th>
+            </thead>
+     {{#each dashboard}}
+    {{> dashboard-details}}
+    {{/each}}
+    </table>

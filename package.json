@@ -1,13 +1,5 @@
 {
-  "dependencies": {
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "express-handlebars": "^6.0.6",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.23.0",
-    "sqlite3": "^5.1.1"
-
-  "name": "crowd-funding",
+  "name": "Swift Inv",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -27,6 +19,7 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.20",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
