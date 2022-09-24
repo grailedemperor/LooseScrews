@@ -5,42 +5,46 @@ class ProductDetails extends Model { }
 
 ProductDetails.init(
     {
-        brand_or_manufacturer: {
+        brand: {
             type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'manufacturerData',
-                key: 'brand_or_manufacturer'
+                key: 'manufacturer'
             }
         },
         price: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false,
         },
        size: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        quantity: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        in_stock: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            primaryKey: true,
-        },
         category: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'products',
-                name: 'category'
-            }
+        },
+        type_or_material: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        product_image: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            primaryKey: true,
+        },
+        product_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'products',
+                key: 'id'
+            }
         },
     },
     {

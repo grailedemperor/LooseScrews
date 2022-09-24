@@ -1,4 +1,4 @@
-const UserData = require('./userData') ;
+const Users = require('./user') ;
 const ManufacturerData = require('./ManufacturerData');
 const ProductDetails = require('./ProductDetails');
 const Products = require('./Products');
@@ -22,30 +22,30 @@ OrderInfo.HasOne(Orders, {
 });
 
 Products.HasMany(ProductDetails, {
-  foreignKey: 'category',
+  foreignKey: 'product_image',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.BelongsTo(Products, {
-  foreignKey: 'category',
+  foreignKey: 'product_image',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.HasOne(Products, {
-  foreignKey: 'category',
+  foreignKey: 'product_image',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.BelongsTo(Products, {
-  foreignKey: ' name',
+  foreignKey: 'product_name',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.HasMany(Products, {
-  foreignKey: ' name',
+  foreignKey: 'brand_or_manufacturer',
   onDelete:'CASCADE'
 });
 
 
-module.exports = { UserData, ManufacturerData, ProductDetails, Products,
+module.exports = {Users, ManufacturerData, ProductDetails, Products,
 OrderInfo, Orders };

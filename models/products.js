@@ -10,18 +10,9 @@ Products.init(
             allowNull: false,
             primaryKey: true,
         },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            primaryKey: true,
-        },
-        in_stock: {
+        in_stock:{
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            references: {
-                model: 'productdetails',
-                key: 'in_stock'
-            }
         },
         quantity: {
             type: DataTypes.INTEGER,
@@ -30,18 +21,22 @@ Products.init(
         product_image:{
             type: DataTypes.TEXT,
             allowNull: true,
+            references: {
+                model: 'productDetails',
+                key: 'product_image'
+            }
         },
-        product_id: {
+        id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             autoIncrement: true,
+            allowNull: false,
         },
-        brand_or_manufacturer: {
+        producer: {
             type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'manufacturerData',
-                key: 'brand_or_manufacturer'
+                key: 'manufacturer'
             }
         },
     },
