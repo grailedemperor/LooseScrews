@@ -50,6 +50,10 @@ nav ul li{
     border:1px solid #ddd;
     background: #fff;
 }
+nav ul li:hover{
+    color:#fff;
+    background: #2078d0;
+}
 nav ul li a{
     text-decoration:none;
     color: #2078d0;

@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
   const price = document.querySelector('#price').value.trim();
   const details = document.querySelector('#product-details').value.trim();
 
-  if (name && price && description) {
+  if (name && price && details) {
     const response = await fetch(`/api/product`, {
       method: 'POST',
       body: JSON.stringify({ name, price, details }),
@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/invhome');
     } else {
       alert('Failed to create project');
     }
@@ -31,7 +31,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/invhome');
     } else {
       alert('Failed to delete product');
     }

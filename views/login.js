@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the home page
-      document.location.replace('/home');
+      document.location.replace('/invhome');
     } else {
       alert(response.statusText);
     }
@@ -30,14 +30,14 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#pwBoxSignup').value.trim();
 
   if (name && email && password) {
-    const response = await fetch('/home', {
+    const response = await fetch('/invhome', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/home');
+      document.location.replace('/invhome');
     } else {
       alert(response.statusText);
     }
