@@ -1,19 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Products extends Model { }
+class Product extends Model { }
 
-Products.init(
+Product.init(
     {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            //primaryKey: true,
         },
         category: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            //primaryKey: true,
         },
         in_stock: {
             type: DataTypes.BOOLEAN,
@@ -34,13 +34,14 @@ Products.init(
         product_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true,
+            primaryKey: true,
+            //autoIncrement: true,
         },
         brand_or_manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'manufacturerData',
+                model: 'manufacturerdata',
                 key: 'brand_or_manufacturer'
             }
         },
@@ -50,8 +51,8 @@ Products.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'products',
+        modelName: 'product',
     }
 );
 
-module.exports = Products;
+module.exports = Product;

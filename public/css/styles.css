@@ -2,11 +2,16 @@ main, body{
     background: #ededed;
     font-family:Arial, Helvetica, sans-serif;
 }
-header{
+header,main,footer{
     padding-left:30px;
     margin:0 auto;
     text-align: left;
     width:90%;
+}
+
+header div{
+    width:100%;
+    background-color: #fff;
 }
 h1{
     font-size: 30px;
@@ -15,21 +20,59 @@ h2{
     font-size: 24px;
     padding-left:10px;
 }
+nav{
+    width:100%;
+    background: #2078d0;
+    padding:7px 0 11px;
+    height:30px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+nav form{
+    display:inline-block;
+}
 #searchBox{
-    width: 250px;
-    font-size:14px;margin-left:10px;
+    display:inline-block;
+    font-size:14px;
+    margin:0 10px;
+    width:250px;
+    height:30px;
+}
+nav ul{
+    margin:0;
+    display:inline-block;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 7px;
+    border:1px solid #ddd;
+    background: #fff;
+}
+nav ul li a{
+    text-decoration:none;
+    color: #2078d0;
+    font-weight:bold;
+    font-size:12px;
+}
+main{
+    overflow-x:auto;
 }
 #results{
-    width:90%;
+    font-size:11px;
+    width:100%;
     background: white;
     padding:10px;
     border: 1px solid #ddd;
     text-align:center;
-    margin:0 auto;
+    border-collapse: collapse;
+}
+#results tr{
+    border: 1px solid #ddd;
 }
 #results th, #results td{
     padding:10px;
-    border: 1px solid #ddd;
 }
 #manageResults{
     background: #ededed;
@@ -49,9 +92,21 @@ h2{
     border: 1px solid #ddd;
     width:90%;
 }
+input[type="file"] {
+    display: none;
+}
+label{
+border: 1px solid #ccc;
+background:#2078d0;
+display: inline-block;
+padding: 6px 12px;
+cursor: pointer;
+font-size:11px;
+color: #fff;
+}
 #loginFormContainer{
     width:450px;
-    background:white;
+    background:#2078d0;
     text-align:center;
     padding: 30px;
     margin:200px auto;
@@ -61,14 +116,45 @@ h2{
     font-weight:bold;
     font-size: 22px;
     font-family:Arial, Helvetica, sans-serif;
+    color: #fff;
 }
 #loginFormContainer input{
     width:200px;
-    font-size:20px;
+    font-size:14px;
     margin: 10px 0 0;
 }
 #loginFormContainer button{
+    list-style-type: none;
+    display: inline-block;
+    padding: 7px;
+    border:1px solid #ddd;
+    background: #fff;
+    text-decoration:none;
+    color: #2078d0;
+    font-weight:bold;
+    font-size:12px;
     width:75px;
-    font-size:20px;
     margin: 10px 0 0;
+}
+@media screen and (max-width:699px){
+    header, main, footer{
+        width:100%;
+        padding-left:0;
+    }
+    header div{
+        text-align:center;
+    }
+    header ul{
+        padding:0;
+        margin-top:7px;
+    }
+    header nav{
+        height:auto;
+    }
+    footer nav{
+        display:none;
+    }
+    #loginFormContainer{
+        margin-top:10px;
+    }
 }

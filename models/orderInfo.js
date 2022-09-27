@@ -7,7 +7,7 @@ OrderInfo.init(
   { order_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'orders',
+        model: 'order',
         key: 'id',
       },
     },
@@ -43,7 +43,7 @@ OrderInfo.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'orderInfo',
+    modelName: 'orderinfo',
   }
 );
 
