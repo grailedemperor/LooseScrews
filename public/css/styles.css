@@ -27,7 +27,6 @@ nav{
     height:30px;
     display:flex;
     flex-wrap: wrap;
-    justify-content:center;
 }
 nav form{
     display:inline-block;
@@ -150,10 +149,11 @@ color: #fff;
     }
     header ul{
         padding:0;
-        margin-top:7px;
+        margin-top:1px;
     }
     header nav{
         height:auto;
+        justify-content:center;
     }
     footer nav{
         display:none;
