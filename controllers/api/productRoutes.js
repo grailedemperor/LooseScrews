@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Products, ProductDetails, ManufacturerData } = require('../models');
+const { Products, ProductDetails, ManufacturerData } = require('../../models');
 const withAuth = require('../utils/auth');
 const manufacturerDataRoutes = require('./manufacturerDataRoutes');
 const productDetailsRoutes = require('./productDetailsRoutes');
@@ -120,7 +120,6 @@ router.put('/:id/manage-product', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 
 
