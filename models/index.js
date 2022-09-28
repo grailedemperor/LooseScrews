@@ -1,7 +1,7 @@
-const UserData = require('./userData') ;
-const ManufacturerData = require('./manufacturerData');
-const ProductDetails = require('./productDetails');
-const Product = require('./product');
+
+const ManufacturerData = require('./ManufacturerData');
+const ProductDetails = require('./ProductDetails');
+const Product = require('./Product');
 const OrderInfo = require('./orderInfo');
 const Order = require('./order.js');
 
@@ -45,5 +45,5 @@ ManufacturerData.hasMany(Product, {
   onDelete:'CASCADE'
 });
 
-module.exports = { UserData, ManufacturerData, ProductDetails, Product,
+module.exports = { ManufacturerData, ProductDetails, Product,
 OrderInfo, Order };
