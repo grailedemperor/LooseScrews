@@ -21,14 +21,6 @@ ProductDetails.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        type_or_material: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -42,7 +34,7 @@ ProductDetails.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'products',
+                model: 'product',
                 key: 'id'
             }
         },
@@ -52,7 +44,7 @@ ProductDetails.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'productDetails',
+        modelName: 'productdetails',
     }
 );
 

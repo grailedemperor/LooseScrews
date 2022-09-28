@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Orders, OrderInfo } = require('../../models');
+const { Order, OrderInfo } = require('../../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
         // Get all order and JOIN with order info
-        const orderData = await Orders.findAll({
+        const orderData = await Order.findAll({
             include: [
                 {
                     model: OrderInfo,
@@ -29,7 +29,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
     try {
         // Get one order and JOIN with order info
-        const orderData = await Orders.findbyPk(req.params.id,{
+        const orderData = await Order.findbyPk(req.params.id,{
             include: [
                 {
                     model: OrderInfo,
@@ -52,7 +52,7 @@ router.get('/:id', withAuth, async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
     try {
-      const newOrder = await Orders.create({
+      const newOrder = await Order.create({
         ...req.body,
         user_id: req.session.user_id,
       });
@@ -65,7 +65,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const orderData = await Orders.destroy({
+      const orderData = await Order.destroy({
         where: {
           id: req.params.id,
           user_id: req.session.user_id,

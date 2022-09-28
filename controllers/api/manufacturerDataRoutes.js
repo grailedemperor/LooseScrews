@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { ManufacturerData, Products } = require('../../models');
+const { ManufacturerData, Product } = require('../../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
         const manufacturerData = await ManufacturerData.findAll({
             include: [
                 {
-                    model: Products,
+                    model: Product,
                     attributes: ['name', 'quantity'],
                 },
             ],
@@ -29,10 +29,10 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
     try {
         // Get one manufacturer and JOIN with product data
-        const manufacturerData = await ManufacturerData.findbyPk(req.body.manufacturer,{
+        const manufacturerData = await ManufacturerData.findbyPk(req.params.id,{
             include: [
                 {
-                    model: Products,
+                    model: Product,
                     attributes: ['name', 'quantity'],
                 },
             ],

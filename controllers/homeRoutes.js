@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Orders, Products, ProductDetails } = require('../models');
+const { Order, Product } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET all dashboards for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const orderData = await Orders.findAll({
+    const orderData = await Order.findAll({
       include: [
         {
           model: Products, ProductDetails,
@@ -36,7 +37,7 @@ router.get('/login', (req, res) => {
 });
 
 // GET one dashboard
-router.get('/order/:id', async (req, res) => {
+router.get('/order/:id', withAuth, async (req, res) => {
   try {
     const dashboardData = await Order.findByPk(req.params.id, {
       include: [
@@ -64,7 +65,7 @@ router.get('/order/:id', async (req, res) => {
 });
 
 // GET one product
-router.get('/product/:id', async (req, res) => {
+router.get('/product/:id', withAuth, async (req, res) => {
   try {
     const dbProductData = await Product.findByPk(req.params.id);
 

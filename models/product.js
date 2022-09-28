@@ -1,47 +1,48 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ManufacturerData extends Model { }
+class Product extends Model { }
 
-ManufacturerData.init(
+Product.init(
     {
-        manufacturer: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            primaryKey: true,
-        },
-        id:{
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-        },
-        manufacturer_location: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             //primaryKey: true,
         },
-        industry: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         category: {
             type: DataTypes.STRING,
+            allowNull: false,
+            //primaryKey: true,
+        },
+        in_stock: {
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         quantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        in_stock: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
+        product_image:{
+            type: DataTypes.TEXT,
+            allowNull: true,
+            references: {
+                model: 'productDetails',
+                key: 'product_image'
+            }
         },
-        product_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        producer: {
+            type: DataTypes.STRING,
+            allowNull: false,
             references: {
-                model: 'product',
-                key: 'id'
+                model: 'manufacturerdata',
+                key: 'manufacturer'
             }
         },
     },
@@ -50,8 +51,8 @@ ManufacturerData.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'manufacturerdata',
+        modelName: 'product',
     }
 );
 
-module.exports = ManufacturerData;
+module.exports = Product;
