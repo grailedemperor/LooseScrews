@@ -34,7 +34,7 @@ ProductDetails.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'products',
+                model: 'product',
                 name: 'category'
             }
         },
@@ -48,7 +48,7 @@ ProductDetails.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'productDetails',
+        modelName: 'productdetails',
     }
 );
 

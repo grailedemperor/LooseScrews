@@ -55,7 +55,7 @@ UserData.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userData',
+    modelName: 'userdata',
   }
 );
 

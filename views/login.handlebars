@@ -2,23 +2,19 @@
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
+    <main id="loginFormContainer">
+      <img src="./assets/images/logo.png" id="searchBox" />
+      <div class="formHdrText">Login to SwiftInv</div>
+      <form id="loginForm">
+        <input type="text" id="fnamebox" placeholder="Username" /><br />
+        <input type="text" id="lnamebox" placeholder="Password" /><br>
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+    </main>
   </div>
   <div class="col-md-6">
+    
     <h2>Signup</h2>
-
     <form class="form signup-form">
       <div class="form-group">
         <label for="name-signup">name:</label>

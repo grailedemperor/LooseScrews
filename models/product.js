@@ -1,35 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ManufacturerData extends Model { }
+class Product extends Model { }
 
-ManufacturerData.init(
+Product.init(
     {
-        brand_or_manufacturer: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             //primaryKey: true,
-        },
-        manufacturer_location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            //primaryKey: true,
-        },
-        type_or_material: {
-            type: DataTypes.STRING,
-            allowNull: false,
         },
         category: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'product',
-                key: 'category'
-            }
-        },
-        quantity: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            //primaryKey: true,
         },
         in_stock: {
             type: DataTypes.BOOLEAN,
@@ -39,12 +23,26 @@ ManufacturerData.init(
                 key: 'in_stock'
             }
         },
-        product_name: {
+        quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        product_image:{
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
+        product_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            //autoIncrement: true,
+        },
+        brand_or_manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'product',
-                key: 'name'
+                model: 'manufacturerdata',
+                key: 'brand_or_manufacturer'
             }
         },
     },
@@ -53,8 +51,8 @@ ManufacturerData.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'manufacturerdata',
+        modelName: 'product',
     }
 );
 
-module.exports = ManufacturerData;
+module.exports = Product;

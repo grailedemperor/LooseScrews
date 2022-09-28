@@ -1,51 +1,49 @@
 const UserData = require('./userData') ;
-const ManufacturerData = require('./ManufacturerData');
-const ProductDetails = require('./ProductDetails');
-const Products = require('./Products');
+const ManufacturerData = require('./manufacturerData');
+const ProductDetails = require('./productDetails');
+const Product = require('./product');
 const OrderInfo = require('./orderInfo');
-const Orders = require('./orders.js');;
+const Order = require('./order.js');
 
-
-Orders.hasMany(OrderInfo, {
+Order.hasMany(OrderInfo, {
   foreignKey: 'order_id',
   onDelete:'CASCADE'
 });
 
-OrderInfo.BelongsTo(Orders, {
+OrderInfo.belongsTo(Order, {
   foreignKey: 'order_id',
   onDelete: 'CASCADE'
 });
 
-OrderInfo.HasOne(Orders, {
+OrderInfo.hasOne(Order, {
   foreignKey: 'order_id',
   onDelete: 'CASCADE'
 });
 
-Products.HasMany(ProductDetails, {
+Product.hasMany(ProductDetails, {
   foreignKey: 'category',
   onDelete: 'CASCADE'
 });
 
-ProductDetails.BelongsTo(Products, {
+ProductDetails.belongsTo(Product, {
   foreignKey: 'category',
   onDelete: 'CASCADE'
 });
 
-ProductDetails.HasOne(Products, {
+ProductDetails.hasOne(Product, {
   foreignKey: 'category',
   onDelete: 'CASCADE'
 });
 
-ManufacturerData.BelongsTo(Products, {
-  foreignKey: ' name',
+ManufacturerData.belongsTo(Product, {
+  foreignKey: 'name',
   onDelete: 'CASCADE'
 });
 
-ManufacturerData.HasMany(Products, {
-  foreignKey: ' name',
+ManufacturerData.hasMany(Product, {
+  foreignKey: 'name',
   onDelete:'CASCADE'
 });
 
-
-module.exports = { UserData, ManufacturerData, ProductDetails, Products,
-OrderInfo, Orders };
+module.exports = { UserData, ManufacturerData, ProductDetails, Product,
+OrderInfo, Order };
