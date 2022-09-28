@@ -1,12 +1,11 @@
 <tr>
-  <td><a href="/dashboard/{{id}}">EDIT</a></td>
-  <td>{{product.id}}</td>
-  <td><img src="/images/{{products.[0].filename}}" alt="{{products.[0].description}}"></td>
+  <td><a href="/dashboard/{{product.productid}}">EDIT</a></td>
+  <td>{{product.productid}}</td>
+  <td><img src="/images/{{products.[0].productImage}}" alt="{{products.[0].description}}"></td>
   <td>{{product.name}}</td>
-  <td>{{category}}</td>
-  <td>{{manufacturer}}</td>
-  <td>Retail</td>
-  <td>QTY Left</td>
-  <td>Orders</td>
-  <td>Customers</td>
+  <td>{{product.category}}</td>
+  <td>{{product.manufacturer}}</td>
+  <td>{{product.customers}}</td>
+  <td>{{product.reorder}}</td>
+  <td>{{product.quantity}}</td>
 </tr>
