@@ -1,5 +1,4 @@
 const { Product } = require('../models');
-
 const productdata = [
   {
     name: 'Sea World Barbie',
