@@ -23,7 +23,7 @@ router.get('/', withAuth, async (req, res) => {
         const product = productData.map((product) => product.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('PAGE WITH PRODUCT INFO', {
+        res.render('dashboard.handlebars', {
             ...product,
             logged_in: req.session.logged_in
         });
@@ -48,7 +48,7 @@ router.get('/:id', withAuth, async (req, res) => {
         const product = productData.map((product) => product.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('PAGE WITH PRODUCT INFO', {
+        res.render('dashboard.handlebars', {
             ...product,
             logged_in: req.session.logged_in
         });

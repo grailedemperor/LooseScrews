@@ -12,7 +12,7 @@ const users = []
 
 
 app.get('/', checkAuthenticated, (req, res) => {
-    res.render('index.ejs', { name: req.user.name })
+    res.render('homepage.handlebars', { name: req.user.name })
   })
   
   app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -26,7 +26,7 @@ app.get('/', checkAuthenticated, (req, res) => {
   }))
   
   app.get('/register', checkNotAuthenticated, (req, res) => {
-    res.render('register.ejs')
+    res.render('login.handlebars')
   })
   
   app.post('/register', checkNotAuthenticated, async (req, res) => {
@@ -44,10 +44,10 @@ app.get('/', checkAuthenticated, (req, res) => {
     }
   })
   
-  app.delete("/logout", (req, res) => {
+  app.delete('/logout', (req, res) => {
     req.logout(req.user, err => {
       if(err) return next(err);
-      res.redirect("/login");
+      res.redirect('/login');
     });
   });
   

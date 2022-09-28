@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Order, Product } = require('../models');
+const { Order, Product, ProductDetails } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all dashboards for homepage
@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
     const orderData = await Order.findAll({
       include: [
         {
-          model: Products, ProductDetails,
+          model: Product, ProductDetails,
           attributes: ['name', 'description'],
         },
       ],
@@ -18,7 +18,7 @@ router.get('/', withAuth, async (req, res) => {
       order.get({ plain: true })
     );
 
-    res.render('homepage', {
+    res.render('homepage.handlebars', {
       orders,
     });
   } catch (err) {
@@ -56,8 +56,8 @@ router.get('/order/:id', withAuth, async (req, res) => {
       ],
     });
 
-    const order = orderData.get({ plain: true });
-    res.render('order', { order });
+    const dashboard = dashboardData.get({ plain: true });
+    res.render('order', { dashboard });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

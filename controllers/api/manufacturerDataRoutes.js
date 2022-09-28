@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
         const manufacturer = manufacturerData.map((manufacturer) => manufacturer.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('PAGE WITH MANUFACTURER INFO', {
+        res.render('manage.ejs', {
             ...manufacturer,
             logged_in: req.session.logged_in
         });
@@ -41,7 +41,7 @@ router.get('/:id', withAuth, async (req, res) => {
         const manufacturer = manufacturerData.map((manufacturer) => manufacturer.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('PAGE WITH MANUFACTURER INFO', {
+        res.render('manage.ejs', {
             ...manufacturer,
             logged_in: req.session.logged_in
         });
