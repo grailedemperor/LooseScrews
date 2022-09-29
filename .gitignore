@@ -6,3 +6,4 @@ package.json
 views/index.html
 views/login.html
 views/manage.html
+.gitignore
