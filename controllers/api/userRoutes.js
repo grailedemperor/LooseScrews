@@ -1,6 +1,10 @@
 const bcrypt = require('bcrypt')
+const passport = require('passport')
+const express = require('express');
+const router = express.Router();
 
-const initializePassport = require('./config/pass-config')
+
+const initializePassport = require('../../config/pass-config')
 initializePassport(
   passport,
   email => users.find(user => user.email === email),
@@ -8,7 +12,7 @@ initializePassport(
 )
 
 const users = []
-
+const app = express();
 
 
 app.get('/', checkAuthenticated, (req, res) => {
@@ -65,3 +69,5 @@ app.get('/', checkAuthenticated, (req, res) => {
     }
     next()
   }
+
+  module.exports = router ;
