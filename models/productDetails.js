@@ -8,10 +8,6 @@ ProductDetails.init(
         brand: {
             type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'manufacturerData',
-                key: 'manufacturer'
-            }
         },
         price: {
             type: DataTypes.DECIMAL,
@@ -28,13 +24,12 @@ ProductDetails.init(
         product_image: {
             type: DataTypes.TEXT,
             allowNull: false,
-            primaryKey: true,
+            // primaryKey: true,
         },
         product_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             references: {
-                model: 'product',
+                model: 'Product',
                 key: 'id'
             }
         },

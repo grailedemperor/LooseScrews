@@ -8,17 +8,17 @@ ManufacturerData.init(
         manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            
         },
-        id:{
+        brand_id:{
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
+            primaryKey: true,
         },
         manufacturer_location: {
             type: DataTypes.STRING,
             allowNull: false,
-            //primaryKey: true,
         },
         industry: {
             type: DataTypes.STRING,
@@ -36,14 +36,14 @@ ManufacturerData.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        product_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'product',
-                key: 'id'
-            }
-        },
+        // product_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'product',
+        //         key: 'id'
+        //     }
+        // },
     },
     {
         sequelize,

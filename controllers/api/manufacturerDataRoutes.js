@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { ManufacturerData, Product } = require('../../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
             include: [
                 {
                     model: Product,
-                    attributes: ['name', 'quantity'],
+                    attributes: ['name', 'quantity', 'category'],
                 },
             ],
         });
@@ -33,7 +33,7 @@ router.get('/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: Product,
-                    attributes: ['name', 'quantity'],
+                    attributes: ['name', 'quantity', 'category'],
                 },
             ],
         });

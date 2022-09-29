@@ -26,25 +26,24 @@ Product.init(
         product_image:{
             type: DataTypes.TEXT,
             allowNull: true,
-            references: {
-                model: 'productDetails',
-                key: 'product_image'
-            }
+            // references: {
+            //     model: 'productDetails',
+            //     key: 'product_image'
+            // }
         },
         id: {
             type: DataTypes.INTEGER,
+            autoIncrement: true,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
         },
-        producer: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'manufacturerdata',
-                key: 'manufacturer'
+        brand_id:{
+            type: DataTypes.INTEGER,
+            references:{
+                model: "manufacturerdata",
+                key:"brand_id"
             }
-        },
+        }
     },
     {
         sequelize,

@@ -9,8 +9,9 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 const ejs = require('ejs');
+const passport = require('passport');
 
 
 const sequelize = require('./config/connection');

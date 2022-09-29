@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Products, ProductDetails, ManufacturerData } = require('../../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 const manufacturerDataRoutes = require('./manufacturerDataRoutes');
-const productDetailsRoutes = require('./productDetailsRoutes');
+const productDetailsRoutes = require('./productDetailRoutes');
 router.use('/manufacturers', manufacturerDataRoutes);
 router.use(':id/manage-product/edit-details ', productDetailsRoutes);
 
@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
             include: [
                 {
                     model: ProductDetails, ManufacturerData,
-                    attributes: ['price', 'size', 'category', 'type_or_material', 'description', 'product_image','manufacturer_location'],
+                    attributes: ['brand','price', 'size', 'industry', 'description', 'product_image','manufacturer_location'],
                 },
             ],
         });
@@ -35,12 +35,12 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
     try {
         // Get one manufacturer and JOIN with product details and manufacturer data
-        const productData = await Products.findbyPk(req.body.brand_or_manufacturer, {
+        const productData = await Products.findbyPk(req.params.id, {
             exclude: [{ attributes: ['id'] }],
             include: [
                 {
                     model: ProductDetails, ManufacturerData,
-                    attributes: ['price', 'size', 'category', 'type_or_material', 'description', 'product_image','manufacturer_location'],
+                    attributes: ['brand','price', 'size', 'industry', 'description', 'product_image','manufacturer_location'],
                 },
             ],
         });
@@ -79,8 +79,8 @@ router.delete('/:id/manage-product', withAuth, async (req, res) => {
             },
             include: [
                 {
-                    model: ProductDetails,
-                    attributes: ['brand','price', 'size', 'category', 'type_or_material', 'description', 'manufacturer_location','product_image','product_id'],
+                    model: ProductDetails, ManufacturerData,
+                    attributes: ['brand','price', 'size', 'industry', 'description', 'product_image','manufacturer_location'],
                 },
             ],
         });
@@ -105,8 +105,8 @@ router.put('/:id/manage-product', withAuth, async (req, res) => {
             },
             include: [
                 {
-                    model: ProductDetails,
-                    attributes: ['brand','price', 'size', 'category', 'type_or_material', 'description', 'manufacturer_location','product_image','product_id'],
+                    model: ProductDetails, ManufacturerData,
+                    attributes: ['brand','price', 'size', 'industry', 'description', 'product_image','manufacturer_location'],
                 },
             ],
 
