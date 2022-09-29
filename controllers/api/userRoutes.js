@@ -30,7 +30,7 @@ app.get('/', checkAuthenticated, (req, res) => {
   }))
   
   app.get('/register', checkNotAuthenticated, (req, res) => {
-    res.render('login.handlebars')
+    res.render('register.handlebars')
   })
   
   app.post('/register', checkNotAuthenticated, async (req, res) => {
