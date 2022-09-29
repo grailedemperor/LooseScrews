@@ -21,27 +21,27 @@ OrderInfo.hasOne(Order, {
 });
 
 Product.hasMany(ProductDetails, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.belongsTo(Product, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.hasOne(Product, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.belongsTo(Product, {
-  foreignKey: 'name',
+  foreignKey: 'brand',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.hasMany(Product, {
-  foreignKey: 'name',
+  foreignKey: 'brand',
   onDelete:'CASCADE'
 });
 

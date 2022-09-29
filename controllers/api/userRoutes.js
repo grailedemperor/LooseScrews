@@ -1,3 +1,4 @@
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const express = require('express');
@@ -15,7 +16,7 @@ const users = []
 const app = express();
 
 
-app.get('/', checkAuthenticated, (req, res) => {
+  app.get('/', checkAuthenticated, (req, res) => {
     res.render('homepage.handlebars', { name: req.user.name })
   })
   
