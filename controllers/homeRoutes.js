@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
       include: [
         {
           model: Product, ProductDetails,
-          attributes: ['name', 'description'],
+          attributes: ['name', 'description', 'size', 'quantity','category'],
         },
       ],
     });
@@ -42,16 +42,8 @@ router.get('/order/:id', withAuth, async (req, res) => {
     const dashboardData = await Order.findByPk(req.params.id, {
       include: [
         {
-          model: Product,
-          attributes: [
-            'name',
-            'category',
-            'in_stock',
-            'quantity',
-            'product_image',
-            'product_id',
-            'producer'
-          ],
+          model: Product, ProductDetails,
+          attributes: [ 'name', 'description', 'size', 'quantity','category'],
         },
       ],
     });
