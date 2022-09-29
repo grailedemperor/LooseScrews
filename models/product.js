@@ -33,15 +33,15 @@ Product.init(
         },
         id: {
             type: DataTypes.INTEGER,
+            autoIncrement: true,
             allowNull: false,
             primaryKey: true,
         },
-        brand:{
-            type: DataTypes.STRING,
-            allowNull: false,
+        brand_id:{
+            type: DataTypes.INTEGER,
             references:{
                 model: "manufacturerdata",
-                key:"manufacturer"
+                key:"brand_id"
             }
         }
     },

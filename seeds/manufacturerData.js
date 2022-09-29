@@ -3,7 +3,6 @@ const { ManufacturerData } = require('../models');
 const manufacturer = [
 
     { manufacturer: "Mattel",
-    brand_id:"1",
     manufacturer_location: "USA",
     industry: "toys",
     category:"children's toys",
@@ -11,7 +10,6 @@ const manufacturer = [
     in_stock:"true"
 },
 { manufacturer: "Hasbro",
-brand_id:"2",
     manufacturer_location: "USA",
     industry: "toys",
     category:"children's toys",
@@ -19,7 +17,6 @@ brand_id:"2",
     in_stock:"true"
 },
 { manufacturer: "Acme",
-brand_id:"3",
     manufacturer_location: "USA",
     industry: "toys",
     category:"children's toys",
@@ -27,7 +24,6 @@ brand_id:"3",
     in_stock:"true"
 },
 { manufacturer: "University Games",
-brand_id:"4",
     manufacturer_location: "USA",
     industry: "toys",
     category:"children's toys",
@@ -35,7 +31,6 @@ brand_id:"4",
     in_stock:"true"
 },
 { manufacturer: "Deep Print Games",
-brand_id:"5",
     manufacturer_location: "USA",
     industry: "toys",
     category:"children's toys",
@@ -43,7 +38,6 @@ brand_id:"5",
     in_stock:"true"
 },
 { manufacturer: "Barnes & Noble",
-brand_id:"6",
     manufacturer_location: "USA",
     industry: "retail books",
     category:"books",

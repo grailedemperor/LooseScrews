@@ -7,8 +7,7 @@ const productdata = [
     in_stock: true ,
     quantity: 10,
     product_image: '/url',
-    id:"1",
-    brand: "Mattel"
+    brand_id: "1"
   },
   {
     name: 'GI Joe',
@@ -16,8 +15,7 @@ const productdata = [
     in_stock: true,
     quantity: 15,
     product_image: '/url',
-    id:"2",
-    brand: 'Hasbro' 
+    brand_id: '2' 
   },
   {
     name: 'Ken and Barbie',
@@ -25,8 +23,7 @@ const productdata = [
     in_stock: true,
     quantity: 12,
     product_image: '/url',
-    id:"3",
-    brand: 'Mattel' 
+    brand_id: '1' 
   },
   {
     name: 'Pokemon',
@@ -34,8 +31,7 @@ const productdata = [
     in_stock: true,
     quantity: 20,
     product_image: '/url',
-    id:"4",
-    brand: 'Hasbro' 
+    brand_id: '2' 
   },
   {
     name: 'Frisbee',
@@ -43,8 +39,7 @@ const productdata = [
     in_stock: true,
     quantity: 106,
     product_image: '/url',
-    id:"5",
-    brand: 'Acme' 
+    brand_id: '3' 
   },
   {
     name: 'Hula Hoop',
@@ -52,8 +47,7 @@ const productdata = [
     in_stock: true,
     quantity: 17,
     product_image: '/url',
-    id:"6",
-    brand: 'Acme'
+    brand_id: '3'
   },
   {
     name: 'Monopoly',
@@ -61,8 +55,7 @@ const productdata = [
     in_stock: true,
     quantity: 19,
     product_image: '/url',
-    id:"7",
-    brand: 'University Games'
+    brand_id: '4'
   },
   {
     name: 'Beer and Bread',
@@ -70,8 +63,7 @@ const productdata = [
     in_stock: true,
     quantity: 10,
     product_image: '/url',
-    id:"8",
-    brand: 'Deep Print Games'  
+    brand_id: '5'  
   },
   {
     name: 'Risk',
@@ -79,8 +71,7 @@ const productdata = [
     in_stock: true,
     quantity: 10,
     product_image: '/url',
-    id:"9",
-    brand: 'Barnes & Noble'
+    brand_id: '6'
   }
 ];
 

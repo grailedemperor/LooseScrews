@@ -5,10 +5,9 @@ class ProductDetails extends Model { }
 
 ProductDetails.init(
     {
-        brand_id: {
-            type: DataTypes.INTEGER,
+        brand: {
+            type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true
         },
         price: {
             type: DataTypes.DECIMAL,
@@ -29,11 +28,10 @@ ProductDetails.init(
         },
         product_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            // references: {
-            //     model: 'product',
-            //     key: 'id'
-            // }
+            references: {
+                model: 'Product',
+                key: 'id'
+            }
         },
     },
     {

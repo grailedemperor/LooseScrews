@@ -8,20 +8,17 @@ ManufacturerData.init(
         manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            
         },
         brand_id:{
             type: DataTypes.INTEGER,
+            autoIncrement: true,
             allowNull: false,
-            // references: {
-            //     model: 'productdetails',
-            //     key: 'brand_id'
-            // }
+            primaryKey: true,
         },
         manufacturer_location: {
             type: DataTypes.STRING,
             allowNull: false,
-            //primaryKey: true,
         },
         industry: {
             type: DataTypes.STRING,
