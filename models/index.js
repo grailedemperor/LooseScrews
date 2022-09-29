@@ -20,28 +20,28 @@ OrderInfo.hasOne(Order, {
   onDelete: 'CASCADE'
 });
 
-Product.hasMany(ProductDetails, {
-  foreignKey: 'category',
-  onDelete: 'CASCADE'
-});
+// Product.hasMany(ProductDetails, {
+//   foreignKey: 'product_id',
+//   onDelete: 'CASCADE'
+// });
 
-ProductDetails.belongsTo(Product, {
-  foreignKey: 'category',
-  onDelete: 'CASCADE'
-});
+// ProductDetails.belongsTo(Product, {
+//   foreignKey: 'product_id',
+//   onDelete: 'CASCADE'
+// });
 
-ProductDetails.hasOne(Product, {
-  foreignKey: 'category',
-  onDelete: 'CASCADE'
-});
+// ProductDetails.hasOne(Product, {
+//   foreignKey: 'product_id',
+//   onDelete: 'CASCADE'
+// });
 
 ManufacturerData.belongsTo(Product, {
-  foreignKey: 'name',
+  foreignKey: 'brand',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.hasMany(Product, {
-  foreignKey: 'name',
+  foreignKey: 'brand',
   onDelete:'CASCADE'
 });
 

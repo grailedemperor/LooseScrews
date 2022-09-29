@@ -1,15 +1,23 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
-const seedDashboard = require('./dashboardData');
-const seedProduct = require('./productData');
-const userData = require('./userData.json');
+// const { ManufacturerData, Product, ProductDetails, Order, OrderInfo } = require('../models');
+const seedManufacturers = require('./manufacturerData');
+const seedProducts = require('./productData');
+const seedProductDetail =  require('./productDetailData');
+const seedOrders = require('./orderData');
+const seedOrderInfo = require('./orderInfoData')
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedDashboard();
+  await seedProductDetail();
 
-  await seedProduct();
+  await seedManufacturers();
+
+  await seedProducts();
+
+  await seedOrders();
+
+  await seedOrderInfo();
 
   process.exit(0);
 };

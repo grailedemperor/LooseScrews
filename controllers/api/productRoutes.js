@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Products, ProductDetails, ManufacturerData } = require('../../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 const manufacturerDataRoutes = require('./manufacturerDataRoutes');
 const productDetailsRoutes = require('./productDetailsRoutes');
 router.use('/manufacturers', manufacturerDataRoutes);

@@ -24,18 +24,18 @@ OrderInfo.init(
     },
     ordered_on: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      allowNull: true,
+      // defaultValue: DataTypes.NOW,
     },
     shipped_by: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      allowNull: true,
+      // defaultValue: DataTypes.NOW,
     },
     delivered_by: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      allowNull: true,
+      // defaultValue: DataTypes.NOW,
     },
   },
   {

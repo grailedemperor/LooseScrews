@@ -10,10 +10,13 @@ ManufacturerData.init(
             allowNull: false,
             primaryKey: true,
         },
-        id:{
+        brand_id:{
             type: DataTypes.INTEGER,
-            autoIncrement: true,
             allowNull: false,
+            // references: {
+            //     model: 'productdetails',
+            //     key: 'brand_id'
+            // }
         },
         manufacturer_location: {
             type: DataTypes.STRING,
@@ -36,14 +39,14 @@ ManufacturerData.init(
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        product_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'product',
-                key: 'id'
-            }
-        },
+        // product_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'product',
+        //         key: 'id'
+        //     }
+        // },
     },
     {
         sequelize,

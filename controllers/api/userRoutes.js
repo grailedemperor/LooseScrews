@@ -1,3 +1,4 @@
+const router = express.Router();
 const bcrypt = require('bcrypt')
 
 const initializePassport = require('./config/pass-config')
@@ -11,7 +12,7 @@ const users = []
 
 
 
-app.get('/', checkAuthenticated, (req, res) => {
+  app.get('/', checkAuthenticated, (req, res) => {
     res.render('homepage.handlebars', { name: req.user.name })
   })
   
@@ -65,3 +66,6 @@ app.get('/', checkAuthenticated, (req, res) => {
     }
     next()
   }
+
+
+module.exports = router ;
