@@ -1,7 +1,7 @@
-const UserData = require('./userData') ;
-const ManufacturerData = require('./manufacturerData');
-const ProductDetails = require('./productDetails');
-const Product = require('./product');
+
+const ManufacturerData = require('./ManufacturerData');
+const ProductDetails = require('./ProductDetails');
+const Product = require('./Product');
 const OrderInfo = require('./orderInfo');
 const Order = require('./order.js');
 
@@ -21,29 +21,23 @@ OrderInfo.hasOne(Order, {
 });
 
 Product.hasMany(ProductDetails, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.belongsTo(Product, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ProductDetails.hasOne(Product, {
-  foreignKey: 'category',
+  foreignKey: 'product_id',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.belongsTo(Product, {
-  foreignKey: 'name',
+  foreignKey: 'brand',
   onDelete: 'CASCADE'
 });
 
 ManufacturerData.hasMany(Product, {
-  foreignKey: 'name',
-  onDelete:'CASCADE'
-});
-
-module.exports = { UserData, ManufacturerData, ProductDetails, Product,
-OrderInfo, Order };

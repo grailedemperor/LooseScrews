@@ -18,10 +18,6 @@ Product.init(
         in_stock: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            references: {
-                model: 'productdetails',
-                key: 'in_stock'
-            }
         },
         quantity: {
             type: DataTypes.INTEGER,
@@ -30,9 +26,14 @@ Product.init(
         product_image:{
             type: DataTypes.TEXT,
             allowNull: true,
+            // references: {
+            //     model: 'productDetails',
+            //     key: 'product_image'
+            // }
         },
-        product_id: {
+        id: {
             type: DataTypes.INTEGER,
+<<<<<<< HEAD
             allowNull: false,
             primaryKey: true,
             //autoIncrement: true,
@@ -44,7 +45,19 @@ Product.init(
                 model: 'manufacturerdata',
                 key: 'brand_or_manufacturer'
             }
+=======
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true,
+>>>>>>> 6cc3221ac8d997c735f8cd197758400e516a5f54
         },
+        brand_id:{
+            type: DataTypes.INTEGER,
+            references:{
+                model: "manufacturerdata",
+                key:"brand_id"
+            }
+        }
     },
     {
         sequelize,
