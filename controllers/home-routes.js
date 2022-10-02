@@ -1,52 +1,63 @@
+const sequelize = require('../config/connection');
 const router = require('express').Router();
-const { Dashboard, Product } = require('../models');
+const { Orders, OrderInfo } = require('../models');
 
 // GET all dashboards for homepage
 router.get('/', async (req, res) => {
   try {
-    const dashboardData = await Dashboard.findAll({
+    const orderData = await Orders.findAll({
       include: [
         {
-          model: Product,
+          model: Products,
           attributes: ['filename', 'description'],
         },
       ],
     });
 
-    const dashboards = dashboardData.map((dashboard) =>
-      dashboard.get({ plain: true })
+    const orders = orderData.map((order) =>
+      order.get({ plain: true })
     );
 
     res.render('homepage', {
-      dashboards,
+      orders,
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
+});
 
 // GET one dashboard
-router.get('/dashboard/:id', async (req, res) => {
+router.get('/order/:id', async (req, res) => {
   try {
-    const dashboardData = await Dashboard.findByPk(req.params.id, {
+    const dashboardData = await Order.findByPk(req.params.id, {
       include: [
         {
           model: Product,
           attributes: [
-            'id',
             'name',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
+            'category',
+            'in_stock',
+            'quantity',
+            'product_image',
+            'product_id',
+            'brand_or_manufacturer'
           ],
         },
       ],
     });
 
-    const dashboard = dashboardData.get({ plain: true });
-    res.render('dashboard', { dashboard });
+    const order = orderData.get({ plain: true });
+    res.render('order', { order });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

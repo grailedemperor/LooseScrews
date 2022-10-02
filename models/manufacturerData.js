@@ -8,12 +8,12 @@ ManufacturerData.init(
         brand_or_manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            //primaryKey: true,
         },
         manufacturer_location: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true,
+            //primaryKey: true,
         },
         type_or_material: {
             type: DataTypes.STRING,
@@ -23,7 +23,7 @@ ManufacturerData.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'products',
+                model: 'product',
                 key: 'category'
             }
         },
@@ -43,7 +43,7 @@ ManufacturerData.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: 'products',
+                model: 'product',
                 key: 'name'
             }
         },
@@ -53,7 +53,7 @@ ManufacturerData.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'manufacturerData',
+        modelName: 'manufacturerdata',
     }
 );
 
