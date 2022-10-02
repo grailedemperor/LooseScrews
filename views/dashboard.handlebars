@@ -1,27 +1,29 @@
 
   <!--{{dashboard.name}}-->
-  <table id="results">
+<table id="results">
   <thead>
-                <th>
-                    Manage Item
-                </th>
-                <th>
-                    Item Name
-                </th>
-                <th>
-                    Quantity
-                </th>
-                <th>
-                    Product Image
-                </th>
-                <th>
-                    Product ID
-                </th>
-                <th>
-                    Manufacturer
-                </th>
-            </thead>
+    <th>
+    Manage Item
+    </th>
+    <th>
+    Item Name
+    </th>
+    <th>
+    Quantity
+    </th>
+    <th>
+    Product Image
+    </th>
+    <th>
+    Product ID
+    </th>
+    <th>
+    Manufacturer
+    </th>
+  </thead>
      {{#each dashboard}}
     {{> dashboard-details}}
     {{/each}}
-    </table>
+</table>
+<button type="submit" class="btn btn-primary" id="logoutBtn">Log Out</button>
+<script src="../js/logout.js"></script>

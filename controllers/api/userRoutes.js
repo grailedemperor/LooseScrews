@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const bcrypt = require('bcrypt')
 const passport = require('passport')
@@ -5,6 +6,14 @@ const express = require('express');
 const router = express.Router();
 
 
+=======
+const bcrypt = require('bcrypt')
+const passport = require('passport');
+const express = require('express');
+const app = express();
+const router = express.Router();
+
+>>>>>>> 4f8afbf1fd061983c7c0e089d9d227f4800d2d59
 const initializePassport = require('../../config/pass-config')
 initializePassport(
   passport,
@@ -70,5 +79,9 @@ const app = express();
     }
     next()
   }
+<<<<<<< HEAD
 
   module.exports = router ;
+=======
+module.exports = router;
+>>>>>>> 4f8afbf1fd061983c7c0e089d9d227f4800d2d59
