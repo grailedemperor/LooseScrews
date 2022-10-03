@@ -17,26 +17,6 @@ ProductDetails.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-<<<<<<< HEAD
-        quantity: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        in_stock: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            primaryKey: true,
-        },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'product',
-                name: 'category'
-            }
-        },
-=======
->>>>>>> 6cc3221ac8d997c735f8cd197758400e516a5f54
         description: {
             type: DataTypes.STRING,
             allowNull: false,

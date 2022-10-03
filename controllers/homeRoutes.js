@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Order, Product, ProductDetails } = require('../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/auth');
 
 // GET all dashboards for homepage
 router.get('/', withAuth, async (req, res) => {

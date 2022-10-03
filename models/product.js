@@ -33,23 +33,9 @@ Product.init(
         },
         id: {
             type: DataTypes.INTEGER,
-<<<<<<< HEAD
-            allowNull: false,
-            primaryKey: true,
-            //autoIncrement: true,
-        },
-        brand_or_manufacturer: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'manufacturerdata',
-                key: 'brand_or_manufacturer'
-            }
-=======
             autoIncrement: true,
             allowNull: false,
             primaryKey: true,
->>>>>>> 6cc3221ac8d997c735f8cd197758400e516a5f54
         },
         brand_id:{
             type: DataTypes.INTEGER,

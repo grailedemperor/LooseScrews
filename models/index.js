@@ -1,4 +1,3 @@
-
 const ManufacturerData = require('./ManufacturerData');
 const ProductDetails = require('./ProductDetails');
 const Product = require('./Product');
@@ -41,3 +40,9 @@ ManufacturerData.belongsTo(Product, {
 });
 
 ManufacturerData.hasMany(Product, {
+  foreignKey: 'brand',
+  onDelete:'CASCADE'
+});
+
+module.exports = { ManufacturerData, ProductDetails, Product,
+OrderInfo, Order };
