@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-
+const passport = require('passport');
 const path = require('path');
 const express = require('express');
 const flash = require('express-flash')
@@ -11,7 +11,6 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const methodOverride = require('method-override');
 const ejs = require('ejs');
-const passport = require('passport');
 
 
 const sequelize = require('./config/connection');

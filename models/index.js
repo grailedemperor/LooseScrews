@@ -1,4 +1,3 @@
-
 const ManufacturerData = require('./ManufacturerData');
 const ProductDetails = require('./ProductDetails');
 const Product = require('./Product');

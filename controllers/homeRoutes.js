@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Order, Product, ProductDetails } = require('../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/auth');
 
 // GET all dashboards for homepage
 router.get('/', withAuth, async (req, res) => {
@@ -34,40 +34,6 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
-});
-
-// GET one dashboard
-router.get('/order/:id', withAuth, async (req, res) => {
-  try {
-    const dashboardData = await Order.findByPk(req.params.id, {
-      include: [
-        {
-          model: Product, ProductDetails,
-          attributes: [ 'name', 'description', 'size', 'quantity','category'],
-        },
-      ],
-    });
-
-    const dashboard = dashboardData.get({ plain: true });
-    res.render('order', { dashboard });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one product
-router.get('/product/:id', withAuth, async (req, res) => {
-  try {
-    const dbProductData = await Product.findByPk(req.params.id);
-
-    const product = dbProductData.get({ plain: true });
-    res.render('product', { product });
-
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
 });
 
 module.exports = router;
