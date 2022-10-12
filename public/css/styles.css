@@ -28,10 +28,9 @@ main, body{
     font-family:Arial, Helvetica, sans-serif;
 }
 header,main,footer{
-    padding-left:30px;
     margin:0 auto;
     text-align: left;
-    width:90%;
+    /*width:90%;*/
 }
 
 header div{
@@ -87,6 +86,9 @@ nav ul li a{
 main{
     overflow-x:auto;
 }
+#tableWrapper{
+    overflow-x:auto
+}
 #results{
     font-size:11px;
     width:100%;
@@ -120,10 +122,7 @@ main{
     border: 1px solid #ddd;
     width:90%;
 }
-input[type="file"] {
-    display: none;
-}
-label{
+#uploadImg, #saveBtn{
     border: 1px solid #ccc;
     background:#2078d0;
     display: inline-block;
@@ -132,7 +131,7 @@ label{
     font-size:11px;
     color: #fff;
 }
-label:hover{
+#uploadImg:hover{
     border: 1px solid #2078d0;
     background:#fff;
     color:#2078d0;
@@ -168,6 +167,29 @@ label:hover{
     font-size:12px;
     width:75px;
     margin: 10px 0 0;
+}
+footer{
+    text-align:right;
+    width:100%;
+    background: #2078d0;
+    padding:7px 0 11px;
+    height:30px;
+}
+footer button{
+    border: 1px solid #ddd;
+    background:#fff;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size:11px;
+    color: #2078d0;
+    float: right;
+    margin-right: 20px;
+}
+footer button:hover{
+    border: 1px solid #fff;
+    background:#2078d0;
+    color:#fff;
 }
 @media screen and (max-width:699px){
     header, main, footer{
