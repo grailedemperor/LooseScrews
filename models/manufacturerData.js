@@ -8,7 +8,6 @@ ManufacturerData.init(
         manufacturer: {
             type: DataTypes.STRING,
             allowNull: false,
-            
         },
         brand_id:{
             type: DataTypes.INTEGER,
